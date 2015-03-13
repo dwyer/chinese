@@ -5,6 +5,8 @@ CEDICT_TXT=cedict_1_0_ts_utf-8_mdbg.txt
 CEDICT_TXT_GZ=$(CEDICT_TXT).gz
 CEDICT_TXT_GZ_URL=http://www.mdbg.net/chindict/export/cedict/$(CEDICT_TXT_GZ)
 
+all: $(CEDICT_DB)
+
 $(CEDICT_DB): $(CEDICT_TXT) $(CEDICT_TXT2DB)
 	./$(CEDICT_TXT2DB) $(CEDICT_TXT) $(CEDICT_DB)
 
