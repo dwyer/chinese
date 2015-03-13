@@ -14,7 +14,7 @@ $(CEDICT_TXT): $(CEDICT_TXT_GZ)
 	gunzip $(CEDICT_TXT_GZ)
 
 $(CEDICT_TXT_GZ):
-	wget $(CEDICT_TXT_GZ_URL)
+	curl -O $(CEDICT_TXT_GZ_URL)
 
 clean:
 	$(RM) $(CEDICT_DB) $(CEDICT_TXT) $(CEDICT_TXT_GZ)
