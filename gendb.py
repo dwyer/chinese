@@ -40,6 +40,10 @@ with open(tocfl_file) as f:
     reader.next() # skip header
     for level, traditional, pinyin in reader:
         cursor.execute('INSERT INTO tocfl VALUES (?, ?, ?)',
-                       decode_all([int(level), traditional, pinyin]))
+                       decode_all([
+                           int(level),
+                           traditional,
+                           pinyin.strip(), # bad formatting in source CSV
+                       ]))
 
 connection.commit()
