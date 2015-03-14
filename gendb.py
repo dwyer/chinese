@@ -9,7 +9,7 @@ import sqlite3
 import sys
 
 if len(sys.argv) != 4:
-    print >>sys.stderr, 'usage: %s INPUT_FILE OUTPUT_FILE' % sys.argv[0]
+    print >>sys.stderr, 'usage: %s CEDICT_TXT TOCFL_CSV OUTPUT_DB' % sys.argv[0]
     exit(1)
 
 cedict_file = sys.argv[1]
