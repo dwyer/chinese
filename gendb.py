@@ -37,7 +37,7 @@ with open(cedict_file) as f:
 
 with open(tocfl_file) as f:
     reader = csv.reader(f)
-    reader.next()
+    reader.next() # skip header
     for level, traditional, pinyin in reader:
         cursor.execute('INSERT INTO tocfl VALUES (?, ?, ?)',
                        decode_all([int(level), traditional, pinyin]))
